@@ -1,71 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
-    <title>Conference Lead Capture</title>
+    <meta charset="UTF-8" />
+    <title>Welcome to Chefworks</title>
+    <style>
+      /* Basic Reset */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f7f7f7;
+      }
+
+      .container {
+        max-width: 400px;
+        margin: 50px auto; /* Centers the container */
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 1.5rem;
+        color: #333;
+      }
+
+      label {
+        display: block;
+        margin-top: 15px;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #555;
+      }
+
+      input[type="text"],
+      input[type="email"] {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 0.95rem;
+      }
+
+      input[type="submit"] {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        font-size: 1rem;
+        color: #fff;
+        background-color: #007bff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #0056b3;
+      }
+    </style>
   </head>
   <body>
-    <form
-      action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DHp000001tbdL"
-      method="POST"
-    >
-      <input type="hidden" name="oid" value="00DHp000001tbdL" />
-      <input type="hidden" name="retURL" value="https://www.chefworks.com/" />
+    <div class="container">
+      <h1>Welcome to Chefworks</h1>
 
-      <!-- Optional Debug Fields (uncomment for testing) -->
-      <!-- <input type="hidden" name="debug" value="1"> -->
-      <!-- <input type="hidden" name="debugEmail" value="ezhang@chefworks.com"> -->
+      <form
+        action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DHp000001tbdL"
+        method="POST"
+      >
+        <input type="hidden" name="oid" value="00DHp000001tbdL" />
+        <input type="hidden" name="retURL" value="https://www.chefworks.com/" />
 
-      <label for="first_name">First Name</label>
-      <input
-        id="first_name"
-        maxlength="40"
-        name="first_name"
-        size="20"
-        type="text"
-      /><br />
+        <!-- Optional Debug Fields (uncomment for testing)
+      <input type="hidden" name="debug" value="1">
+      <input type="hidden" name="debugEmail" value="ezhang@chefworks.com"> -->
 
-      <label for="last_name">Last Name</label>
-      <input
-        id="last_name"
-        maxlength="80"
-        name="last_name"
-        size="20"
-        type="text"
-      /><br />
+        <label for="first_name">First Name</label>
+        <input id="first_name" maxlength="40" name="first_name" type="text" />
 
-      <label for="email">Email</label>
-      <input
-        id="email"
-        maxlength="80"
-        name="email"
-        size="20"
-        type="text"
-      /><br />
+        <label for="last_name">Last Name</label>
+        <input
+          id="last_name"
+          maxlength="80"
+          name="last_name"
+          type="text"
+          required
+        />
 
-      <label for="company">Company</label>
-      <input
-        id="company"
-        maxlength="40"
-        name="company"
-        size="20"
-        type="text"
-      /><br />
+        <label for="email">Email</label>
+        <input id="email" maxlength="80" name="email" type="text" />
 
-      <label for="phone">Phone</label>
-      <input
-        id="phone"
-        maxlength="40"
-        name="phone"
-        size="20"
-        type="text"
-      /><br />
+        <label for="company">Company</label>
+        <input
+          id="company"
+          maxlength="40"
+          name="company"
+          type="text"
+          required
+        />
 
-      <!-- Hidden Default Fields -->
-      <input type="hidden" name="00NNt000000Xu3R" value="Yes" />
-      <input type="hidden" name="lead_source" value="NRA" />
+        <label for="phone">Phone</label>
+        <input id="phone" maxlength="40" name="phone" type="text" />
 
-      <input type="submit" name="submit" />
-    </form>
+        <!-- Hidden Default Fields -->
+        <input type="hidden" name="00NNt000000Xu3R" value="Yes" />
+        <input type="hidden" name="lead_source" value="NRA" />
+
+        <input type="submit" name="submit" value="Submit" />
+      </form>
+    </div>
   </body>
 </html>
+
