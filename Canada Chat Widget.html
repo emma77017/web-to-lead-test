@@ -1,0 +1,47 @@
+<!-- Canada Chat Support - Start -->
+<script type="text/javascript">
+  (function (w, d, x, id) {
+    var s = d.createElement("script");
+    s.src =
+      "https://chefworks.my.connect.aws/connectwidget/static/amazon-connect-chat-interface-client.js";
+    s.async = 1;
+    s.id = id;
+    d.getElementsByTagName("head")[0].appendChild(s);
+    w[x] =
+      w[x] ||
+      function () {
+        (w[x].ac = w[x].ac || []).push(arguments);
+      };
+  })(
+    window,
+    document,
+    "amazon_connect",
+    "a239f317-1631-4991-860f-b95503f2a016"
+  );
+
+  // Grab current URL and browser language exactly like the US widget
+  var currentUrl = window.location.href;
+  var browserLanguage = navigator.language || navigator.userLanguage;
+
+  // Match the same icon colors/appearance as your US version
+  amazon_connect("styles", {
+    iconType: "CHAT",
+    openChat: { color: "#ffffff", backgroundColor: "#b90404" },
+    closeChat: { color: "#ffffff", backgroundColor: "#b90404" },
+  });
+
+  // Your existing Canada snippetId
+  amazon_connect(
+    "snippetId",
+    "QVFJREFIaG8zNDMxY1o2YzBOUmhhR09ycENzVWhNWXgzd3ZXalZIbWFFbkY5TVBBTUFGVzBhQ1VyYkg3ZjZrS2tYZ3dsekJqQUFBQWJqQnNCZ2txaGtpRzl3MEJCd2FnWHpCZEFnRUFNRmdHQ1NxR1NJYjNEUUVIQVRBZUJnbGdoa2dCWlFNRUFTNHdFUVFNSFdzaFNDKzRLc29Nc0JRaUFnRVFnQ3Voc0RhRjZEcHQ5WXg4czlnWnljQXZ5b1JhdWxUTDRnMnZiRVVFM2piOFgvT0VjY3RyRWdLN3A0dUQ6OjVsVnBXUXJubFJtdDNHeUY3R1dURDFSeDN5NElZYS9MMi9DRHIreU9GZ3JZUzV4Y1IwNGhkOWJqSDFzZWgveFZZSjNtelNNL2VrdXZmdFA0SnJtUkVrclpSVXozTExiMkNaRTdFTW9Ja1NacjZWRUF1VUdvN29pamRIR0Q5RCtEMTRwb2g0Uk1vVEU0R2N6TTUzQXlNMXZKTU5YUmRiUT0="
+  );
+
+  // Pass along the URL & language so your bot can see them
+  amazon_connect("contactAttributes", {
+    CurrentUrl: currentUrl,
+    BrowserLanguage: browserLanguage,
+  });
+
+  // No authenticate() block is included, per your request to skip "Add security"
+</script>
+<!-- Canada Chat Support - End -->
